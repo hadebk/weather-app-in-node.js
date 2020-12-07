@@ -7,6 +7,8 @@ const forecast = require("./utils/forecast");
 
 // to run server write command: node src/app.js
 const app = express();
+// get port from host(heroku)
+const port = process.env.PORT || 3000 // 3000 to run app locally
 
 //************************************************************************************************************//
 //console.log(__dirname);
@@ -112,6 +114,6 @@ app.get("*", (req, res) => {
 
 //************************************************************************************************************//
 // port, callback function : fire when the server is up start running
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}.`);
 });
